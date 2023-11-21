@@ -1,38 +1,34 @@
-# create-svelte
+# RSVPED (Web)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+- Host can create a password protected event
+- Host can send invitation to invitee to RSVP
+- Invitee can "login" (temp access) to event using their email (send code)
+- Invitee can see/add notes
 
-## Creating a project
+## Event
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Host can see list of events they've created
+- Host can create new event
+    - Title
+    - Description
+    - Start date/time
+    - End date/time
+    - All day?
+    - Max invitees
+    - Additional links (multiple) for more info
+    - Password (salt)
+    - Allowlist (emails/phone numbers, multiple)
+    - Questionnaire
+        - Polls (options, completed, expiry date)
+    - Publish (option: send emails to invitees)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## RSVP
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- Insert email
+    - If user is on invite list, receive access code
+    - Else, tell them they are not invited
+- Click Yes, Maybe, No (remove from event's allowlist)
+- Answer poll
+- Answer question
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Create account
